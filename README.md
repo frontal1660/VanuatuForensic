@@ -16,6 +16,7 @@ Liste des taches à accomplir :
 - [ ] Interpréter
 - [ ] Conclure
 - [ ] Bonus 01 - CVE
+- [ ] Bonns 02 - Extrapolation
   
   <br/>
 
@@ -310,4 +311,14 @@ Voici quelques CVE interessantes :
 |CVE-2023-43177	| < 10.5.1		| Vulnérabilité permettant l'accès non authentifié à des fichiers sensibles et l'exécution de code à distance	| 9.8	| NON - :heart_eyes: |
 |CVE-2023-48795	| < 10.6.0		| Vulnérabilité dans le protocole SSH permettant de contourner les vérifications d'intégrité			| 7.5	| NON - :heart_eyes: |
 
+  <br/>
 
+## :alien: Bonns 02 - Extrapolation
+  
+La CVE-2024-4040 est le vecteur le plus probable car zlle permet d’échapper à la sandbox VFS et d’exécuter du code arbitraire.
+<br/>
+
+==> Cela correspond parfaitement à l’exécution d’un script PowerShell injecté.  
+<br/>
+
+Les autres CVE (XSS, prise de contrôle admin) ne mènent pas directement à un shell PowerShell injecté mais pourraient être utilisées en complément pour faciliter une attaque.
