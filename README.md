@@ -33,6 +33,8 @@ _URL_01_ point vers :
 http://147.45.112.220/a
 ```
   
+Verdict : 
+  
 - [X] Récupérer la commande powershell parente :sunglasses:
   
   
@@ -41,7 +43,9 @@ http://147.45.112.220/a
 A partir de Maxmind, il est possible de récupérer les informations suivantes :
   
 ![image](https://github.com/user-attachments/assets/a87750f6-c1e1-47b6-a002-a8f11c168f71)
-
+  
+Verdict : 
+  
 - [X] OSINT - Récupérer les informations de géoloc du serveur distant :sunglasses:
   
   
@@ -50,6 +54,8 @@ A partir de Maxmind, il est possible de récupérer les informations suivantes :
 Le site Cisco Talos indique que l'IP possède une réputation plutôt "neutre" : 
   
 ![image](https://github.com/user-attachments/assets/546d02a9-593a-437b-bca7-461507fef710)
+  
+Verdict : 
   
 - [X] OSINT - Récupérer les informations de réputation du serveur distant :sunglasses:
   
@@ -64,7 +70,8 @@ _B64_01_ contient une chaine très longue qui ne ressemble pas à du BASE64 :
   
 ![image](https://github.com/user-attachments/assets/271d6e1e-3c4c-42a0-9ebb-2c546999bb1b)  
   
-- [X] Télécharger le script distant :sunglasses:
+Verdict : 
+  - [X] Télécharger le script distant :sunglasses:
   
   
 ## :alien: Analyser et décoder le fichier distant
@@ -123,8 +130,8 @@ else {
   
 On remarque immediatement la présence d'une nouvelle chaine très longue en BASE64 : _B64_02_
   
-
-- [X] Analyser et décoder le fichier distant :sunglasses:
+Verdict : 
+  - [X] Analyser et décoder le fichier distant :sunglasses:
   
   
 ## :alien: Décoder _B64_02_
@@ -134,7 +141,10 @@ Un décodage direct de _B64_02_ échoue alors que la chaine finit bien par "==" 
 ![image](https://github.com/user-attachments/assets/11098240-b38e-43cd-86cc-75992ce9d5d4)  
   
 Il faut analyser le code pour comprendre pourquoi le décodage BASE64 échoue.  
+  
 
+Verdict : 
+  
 - [ ] Décoder _B64_02_ :cursing_face:
   
   
@@ -157,7 +167,8 @@ Il y a donc un autre problème qui ne semble avoir que deux solutions possibles 
 1. soit il y a, à la suite de _SEQ_01_, encore un décodage (_S01_)
 2. soit _SEQ_01_ est suffisante et le reste se passe apres _SEQ_01 (_S02)
   
-- [ ] Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_ :cursing_face:
+Verdict : 
+  - [ ] Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_ :cursing_face:
   
   
 ## :alien: Analyser la seconde partie du code contenu dans _B64_01_
@@ -177,8 +188,9 @@ Il faut analyser sequentiellemnent ce code pour trancher entre _S01_ et _S02_ :
 4. Vérification de l’architecture 32/64
    - Si x64 => lance un sous-processus PowerShell 32 bits via Start-Job -RunAs32
    - Sinon exécute directement IEX $DoIt.
-
-
+  
+Verdict : 
+- [X]  Analyser la seconde partie du code contenu dans _B64_01_ :sunglasses:
 
 
 
