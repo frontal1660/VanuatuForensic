@@ -62,18 +62,24 @@ _URL_01_ point vers :
 http://147.45.112.220/a
 ```
   
+- [X] Récupérer la commande powershell parente
+  
 ## OSINT - Récupérer les informations de géoloc du serveur distant
   
 A partir de Maxmind, il est possible de récupérer les informations suivantes :
   
 ![image](https://github.com/user-attachments/assets/a87750f6-c1e1-47b6-a002-a8f11c168f71)
 
+- [X] OSINT - Récupérer les informations de géoloc du serveur distant
+  
 ## OSINT - Récupérer les informations de réputation du serveur distant
 
 Le site Cisco Talos indique que l'IP possède une réputation plutôt "neutre" : 
   
 ![image](https://github.com/user-attachments/assets/546d02a9-593a-437b-bca7-461507fef710)
-
+  
+- [X] OSINT - Récupérer les informations de réputation du serveur distant
+  
 ## 
 
 ## 
