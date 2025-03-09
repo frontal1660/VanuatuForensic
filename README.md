@@ -36,7 +36,7 @@ This site was built using [GitHub Pages](https://pages.github.com/).
 > Advises about risks or negative outcomes of certain actions.
 
 
-# Plan d'actions
+## Plan d'actions
 Liste des taches à accomplir :
 - [ ] Définir le contexte
 - [ ] Récupérer la commande powershell parente
@@ -44,17 +44,22 @@ Liste des taches à accomplir :
 - [ ] OSINT - Récupérer les informations de réputation du serveur distant
 - [ ] 
 
-# Définir le contexte
+# VanuatuForensic
+
+## Définir le contexte
 TBD
 
-# Récupérer la commande powershell parente
+## Récupérer la commande powershell parente
 
-# OSINT - Récupérer les informations de géoloc du serveur distant
+## OSINT - Récupérer les informations de géoloc du serveur distant
+A partir de Maxmind, il est possible de récupérer les informations suivantes :
+![image](https://github.com/user-attachments/assets/a87750f6-c1e1-47b6-a002-a8f11c168f71)
 
-# OSINT - Récupérer les informations de réputation du serveur distant
+## OSINT - Récupérer les informations de réputation du serveur distant
 
-# 
 
-# 
+## 
 
-# 
+## 
+
+## 
