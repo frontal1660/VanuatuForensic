@@ -303,6 +303,7 @@ Voici quelques CVE interessantes :
 <br/>
 
 |CVE		| Versions		| Titre														| CVSS	| Vulnerable 	|
+|---------------|-----------------------|---------------------------------------------------------------------------------------------------------------|-------|---------------|
 |CVE-2024-4040	| < 10.7.1, < 11.1.0	| Évasion de la sandbox VFS permettant l'exécution de code à distance non authentifié				| 9.8	| OUI 		|
 |CVE-2024-53552	| < 10.8.3, < 11.2.3	| Vulnérabilité dans le lien de réinitialisation de mot de passe menant à une prise de contrôle de compte	| 8.8	| OUI 		|
 |CVE-2024-11986	| < 10.8.2, < 11.2.1	| Vulnérabilité XSS (Cross-Site Scripting)									| 6.1	| OUI 		|
