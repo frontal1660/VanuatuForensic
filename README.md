@@ -20,8 +20,8 @@ This site was built using [GitHub Pages](https://pages.github.com/).
 
 @octocat :+1: This PR looks great - it's ready to merge! :shipit:
 
-[!NOTE]
-Useful information that users should know, even when skimming content.
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
 
 > [!TIP]
 > Helpful advice for doing things better or more easily.
@@ -34,3 +34,27 @@ Useful information that users should know, even when skimming content.
 
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
+
+
+# Plan d'actions
+Liste des taches à accomplir :
+- [ ] Définir le contexte
+- [ ] Récupérer la commande powershell parente
+- [ ] OSINT - Récupérer les informations de géoloc du serveur distant
+- [ ] OSINT - Récupérer les informations de réputation du serveur distant
+- [ ] 
+
+# Définir le contexte
+TBD
+
+# Récupérer la commande powershell parente
+
+# OSINT - Récupérer les informations de géoloc du serveur distant
+
+# OSINT - Récupérer les informations de réputation du serveur distant
+
+# 
+
+# 
+
+# 
