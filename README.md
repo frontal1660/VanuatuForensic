@@ -36,8 +36,8 @@ Verdict :
   
 - [X] Récupérer la commande powershell parente :sunglasses:
   
-  
-  ## :alien: OSINT - Récupérer les informations de géoloc du serveur distant
+  <br/><br/>
+## :alien: OSINT - Récupérer les informations de géoloc du serveur distant
   
 A partir de Maxmind, il est possible de récupérer les informations suivantes :
   
