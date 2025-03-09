@@ -15,8 +15,10 @@ Liste des taches à accomplir :
 
 
 ##  :alien: Définir le contexte
-TBD
-
+  
+Contexte : blocage, par Crowdstrike, d'une commande powershell.
+  
+  
 ## Récupérer la commande powershell parente
 
 La commande fournie par CrowdStrike est la suivante : 
