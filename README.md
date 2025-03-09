@@ -177,20 +177,49 @@ La partie intéressante se trouve ici :
   
 ![image](https://github.com/user-attachments/assets/389611e1-ba56-4289-9ef0-eb8255b62935)
   
-Il faut analyser sequentiellemnent ce code pour trancher entre _S01_ et _S02_ : 
-1. Allocation de mémoire avec VirtualAlloc
-   - Appel API VirtualAlloc via kernel32.dll
-   - Allocation d'un buffer mémoire exécutable via 0x40 (PAGE_EXECUTE_READWRITE)
-2. Copie des données décodées dans ce buffer
-    - Marshal.Copy($var_code, 0, $var_buffer, $var_code.length)
-3. Exécution des données du buffer en tant que byte code
-    - GetDelegateForFunctionPointer($var_buffer, …).Invoke([IntPtr]::Zero
-4. Vérification de l’architecture 32/64
-   - Si x64 => lance un sous-processus PowerShell 32 bits via Start-Job -RunAs32
-   - Sinon exécute directement IEX $DoIt.
+Il faut analyser sequentiellemnent ce code pour trancher entre _S01_ et _S02_.
+Voici ce qui se passe : 
   
+1. Allocation de mémoire avec VirtualAlloc
+  
+Le code fait un appel API VirtualAlloc via kernel32.dll.
+Il alloue un buffer mémoire exécutable via 0x40 (PAGE_EXECUTE_READWRITE)
+  
+2. Copie des données décodées dans ce buffer
+  
+Les données décodées sont copiées dans le buffe mémoire exécutable via la commande : 
+  
+```
+Marshal.Copy($var_code, 0, $var_buffer, $var_code.length)
+```
+  
+3. Exécution des données du buffer en tant que byte code
+  
+Les données sont ensuite exécutées :  
+
+```
+GetDelegateForFunctionPointer($var_buffer, …).Invoke([IntPtr]::Zero
+```
+  
+4. Vérification de l’architecture 32/64
+  
+Le code effectue un test :
+  
+- Si x64 => lance un sous-processus PowerShell 32 bits
+  
+```
+Start-Job -RunAs32
+```
+  
+- Sinon exécute directement
+```
+IEX $DoIt.
+```
+    
 Verdict : 
 - [X]  Analyser la seconde partie du code contenu dans _B64_01_ :sunglasses:
-
-
+  
+  
+# :alien: Choix entre _S01_ et _S02_
+  
 
