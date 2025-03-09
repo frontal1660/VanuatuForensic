@@ -304,10 +304,10 @@ Voici quelques CVE interessantes :
 
 |CVE		| Versions		| Titre														| CVSS	| Vulnerable 	|
 |---------------|-----------------------|---------------------------------------------------------------------------------------------------------------|-------|---------------|
-|CVE-2024-4040	| < 10.7.1, < 11.1.0	| Évasion de la sandbox VFS permettant l'exécution de code à distance non authentifié				| 9.8	| OUI 		|
-|CVE-2024-53552	| < 10.8.3, < 11.2.3	| Vulnérabilité dans le lien de réinitialisation de mot de passe menant à une prise de contrôle de compte	| 8.8	| OUI 		|
-|CVE-2024-11986	| < 10.8.2, < 11.2.1	| Vulnérabilité XSS (Cross-Site Scripting)									| 6.1	| OUI 		|
-|CVE-2023-43177	| < 10.5.1		| Vulnérabilité permettant l'accès non authentifié à des fichiers sensibles et l'exécution de code à distance	| 9.8	| NON 		|
-|CVE-2023-48795	| < 10.6.0		| Vulnérabilité dans le protocole SSH permettant de contourner les vérifications d'intégrité			| 7.5	| NON 		|
+|CVE-2024-4040	| < 10.7.1, < 11.1.0	| Évasion de la sandbox VFS permettant l'exécution de code à distance non authentifié				| 9.8	| OUI - :skull:	|
+|CVE-2024-53552	| < 10.8.3, < 11.2.3	| Vulnérabilité dans le lien de réinitialisation de mot de passe menant à une prise de contrôle de compte	| 8.8	| OUI - :skull:	|
+|CVE-2024-11986	| < 10.8.2, < 11.2.1	| Vulnérabilité XSS (Cross-Site Scripting)									| 6.1	| OUI - :skull:	|
+|CVE-2023-43177	| < 10.5.1		| Vulnérabilité permettant l'accès non authentifié à des fichiers sensibles et l'exécution de code à distance	| 9.8	| NON - :heart_eyes: |
+|CVE-2023-48795	| < 10.6.0		| Vulnérabilité dans le protocole SSH permettant de contourner les vérifications d'intégrité			| 7.5	| NON - :heart_eyes: |
 
 
