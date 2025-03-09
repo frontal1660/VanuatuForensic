@@ -1,6 +1,6 @@
 # VanuatuForensic
   
-## Plan d'actions
+## :alien: Plan d'actions
 Liste des taches à accomplir :
 - [ ] Définir le contexte
 - [ ] Récupérer la commande powershell parente
@@ -13,7 +13,8 @@ Liste des taches à accomplir :
 - [ ] 
 
 
-## Définir le contexte
+
+##  :alien: Définir le contexte
 TBD
 
 ## Récupérer la commande powershell parente
@@ -29,28 +30,28 @@ _URL_01_ point vers :
 http://147.45.112.220/a
 ```
   
-- [X] Récupérer la commande powershell parente
+- [X] Récupérer la commande powershell parente :sunglasses:
   
   
-## OSINT - Récupérer les informations de géoloc du serveur distant
+## :alien: OSINT - Récupérer les informations de géoloc du serveur distant
   
 A partir de Maxmind, il est possible de récupérer les informations suivantes :
   
 ![image](https://github.com/user-attachments/assets/a87750f6-c1e1-47b6-a002-a8f11c168f71)
 
-- [X] OSINT - Récupérer les informations de géoloc du serveur distant
+- [X] OSINT - Récupérer les informations de géoloc du serveur distant :sunglasses:
   
   
-## OSINT - Récupérer les informations de réputation du serveur distant
+## :alien: OSINT - Récupérer les informations de réputation du serveur distant
 
 Le site Cisco Talos indique que l'IP possède une réputation plutôt "neutre" : 
   
 ![image](https://github.com/user-attachments/assets/546d02a9-593a-437b-bca7-461507fef710)
   
-- [X] OSINT - Récupérer les informations de réputation du serveur distant
+- [X] OSINT - Récupérer les informations de réputation du serveur distant :sunglasses:
   
   
-## Télécharger le fichier distant
+## :alien: Télécharger le fichier distant
   
 Lorsque l'on télécharge le fichier distant, on obtient un contenu de la sorte :  
 $s=New-Object IO.MemoryStream(,[Convert]::FromBase64String("_B64_01_"));
@@ -60,10 +61,10 @@ _B64_01_ contient une chaine très longue qui ne ressemble pas à du BASE64 :
   
 ![image](https://github.com/user-attachments/assets/271d6e1e-3c4c-42a0-9ebb-2c546999bb1b)  
   
-- [X] Télécharger le script distant
+- [X] Télécharger le script distant :sunglasses:
   
   
-## Analyser et décoder le fichier distant
+## :alien: Analyser et décoder le fichier distant
 
 Le code du fichier distant indique clairement que _B64_01_ :  
 - d'acord décodée comme une chaine BASE64
@@ -120,10 +121,10 @@ else {
 On remarque immediatement la présence d'une nouvelle chaine très longue en BASE64 : _B64_02_
   
 
-- [X] Analyser et décoder le fichier distant
+- [X] Analyser et décoder le fichier distant :sunglasses:
   
   
-## Décoder _B64_02_
+## :alien: Décoder _B64_02_
 
 Un décodage direct de _B64_02_ échoue alors que la chaine finit bien par "==" :  
   
@@ -131,10 +132,10 @@ Un décodage direct de _B64_02_ échoue alors que la chaine finit bien par "==" 
   
 Il faut analyser le code pour comprendre pourquoi le décodage BASE64 échoue.  
 
-- [ ] Décoder _B64_02_
+- [ ] Décoder _B64_02_ :cursing_face:
   
   
-## Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_
+## :alien: Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_
   
 La partie intéressante dans le code est :  
   
@@ -153,10 +154,10 @@ Il y a donc un autre problème qui ne semble avoir que deux solutions possibles 
 1. soit il y a, à la suite de _SEQ_01_, encore un décodage (_S01_)
 2. soit _SEQ_01_ est suffisante et le reste se passe apres _SEQ_01 (_S02)
   
-- [ ] Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_
+- [ ] Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_ :cursing_face:
   
   
-## Analyser la seconde partie du code contenu dans _B64_01_
+## :alien: Analyser la seconde partie du code contenu dans _B64_01_
   
 La partie intéressante se trouve ici :  
   
