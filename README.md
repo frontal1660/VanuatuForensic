@@ -12,16 +12,13 @@ Liste des taches à accomplir :
 - [ ] Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_
 - [ ] Analyser la seconde partie du code contenu dans _B64_01_
 - [ ] Choix entre _S01_ et _S02_
-- [ ] 
-
-
-
+  
+  
 ##  :alien: Définir le contexte
   
 Contexte : blocage, par Crowdstrike, d'une commande powershell.
   
-  
-  
+    
 ## Récupérer la commande powershell parente
 
 La commande fournie par CrowdStrike est la suivante : 
