@@ -156,6 +156,7 @@ Verdict :
 - [ ] Décoder _B64_02_ :cursing_face:
   
   <br/>
+
 ## :alien: Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_
   
 La partie intéressante dans le code est :  
@@ -179,6 +180,7 @@ Verdict :
   - [ ] Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_ :cursing_face:
   
   <br/>
+
 ## :alien: Analyser la seconde partie du code contenu dans _B64_01_
   
 La partie intéressante se trouve ici :  
