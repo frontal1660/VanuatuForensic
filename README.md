@@ -210,7 +210,7 @@ Voici ce qui se passe :
 1. Allocation de mémoire avec VirtualAlloc
   
 Le code fait un appel API VirtualAlloc via kernel32.dll.  
-Il alloue un buffer mémoire exécutable via 0x40 (PAGE_EXECUTE_READWRITE)
+Il alloue un buffer mémoire exécutable via 0x40 (PAGE_EXECUTE_READWRITE)  
 <br/>
 
 2. Copie des données décodées dans ce buffer
@@ -246,7 +246,8 @@ Start-Job -RunAs32
 ```
 IEX $DoIt.
 ```
-    
+<br/>
+
 Verdict : 
 - [X]  Analyser la seconde partie du code contenu dans _B64_01_ :sunglasses:
   
