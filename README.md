@@ -178,7 +178,7 @@ La partie intéressante dans le code est :
 On voit clairement la séquence suivante (_SEQ_01_) :  
 1. _B64_02_ est décodée comme une chaine BASE64
 2. cette chaine décodée est convertie en byte code
-3. chaque octet du byte code, on applique XOR avec une clé spécifique ("-bxor 35")
+3. à chaque octet du byte code, on applique XOR avec une clé spécifique ("-bxor 35")
 <br/>
 
 Si on essaie de réaliser ces opérations dans cet ordre, on se rend vite compte que cela donne quelque chose, certes, mais rien d'utilisable ou meme rien de lisible.
@@ -188,7 +188,7 @@ Si on essaie de réaliser ces opérations dans cet ordre, on se rend vite compte
 
 Il y a donc un autre problème qui ne semble avoir que deux solutions possibles : 
 1. soit il y a, à la suite de _SEQ_01_, encore un décodage (_S01_)
-2. soit _SEQ_01_ est suffisante et le reste se passe apres _SEQ_01 (_S02)
+2. soit _SEQ_01_ est suffisante et le reste se passe apres _SEQ_01_ (_S02_)
 <br/>
 
 Verdict : 
