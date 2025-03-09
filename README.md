@@ -92,8 +92,12 @@ Le code du fichier distant indique clairement que _B64_01_ :
 2. ensuite décompressée comme un binaire GZIP
 
   <br/>
-CyberChef peut nous aider en chainant "From Base64" et "Gunzip". On obtient alors le code powershell suivant :  
-  
+CyberChef peut nous aider en chainant "From Base64" et "Gunzip".  
+<br/>
+
+On obtient alors le code powershell suivant :  
+<br/>
+
 ```
 Set-StrictMode -Version 2
 
