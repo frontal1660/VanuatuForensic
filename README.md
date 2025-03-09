@@ -290,5 +290,5 @@ Verdict :
 
 ## :alien: Conclusion
   
-Il faudrait demander à une RedTeam de tenter de reverser le SHELLCODE.
+Il faudrait demander à une RedTeam de tenter de reverser le SHELLCODE.  
 Cela est faisable, notamment à partir des byte code, mais cela demande un travail conséquent.
