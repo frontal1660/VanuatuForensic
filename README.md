@@ -13,12 +13,12 @@ Liste des taches à accomplir :
 - [ ] Analyser la seconde partie du code contenu dans _B64_01_
 - [ ] Choix entre _S01_ et _S02_
   
-  
+  <br/>
 ##  :alien: Définir le contexte
   
 Contexte : blocage, par Crowdstrike, d'une commande powershell.
   
-    
+  <br/>
 ## Récupérer la commande powershell parente
 
 La commande fournie par CrowdStrike est la suivante : 
@@ -47,7 +47,7 @@ Verdict :
   
 - [X] OSINT - Récupérer les informations de géoloc du serveur distant :sunglasses:
   
-  
+  <br/>
 ## :alien: OSINT - Récupérer les informations de réputation du serveur distant
 
 Le site Cisco Talos indique que l'IP possède une réputation plutôt "neutre" : 
@@ -58,7 +58,7 @@ Verdict :
   
 - [X] OSINT - Récupérer les informations de réputation du serveur distant :sunglasses:
   
-  
+  <br/>
 ## :alien: Télécharger le fichier distant
   
 Lorsque l'on télécharge le fichier distant, on obtient un contenu de la sorte :  
@@ -74,7 +74,7 @@ _B64_01_ contient une chaine très longue qui ne ressemble pas à du BASE64 :
 Verdict : 
   - [X] Télécharger le script distant :sunglasses:
   
-  
+  <br/>
 ## :alien: Analyser et décoder le fichier distant
 
 Le code du fichier distant indique clairement que _B64_01_ :  
@@ -134,7 +134,7 @@ On remarque immediatement la présence d'une nouvelle chaine très longue en BAS
 Verdict : 
   - [X] Analyser et décoder le fichier distant :sunglasses:
   
-  
+  <br/>
 ## :alien: Décoder _B64_02_
 
 Un décodage direct de _B64_02_ échoue alors que la chaine finit bien par "==" :  
@@ -148,7 +148,7 @@ Verdict :
   
 - [ ] Décoder _B64_02_ :cursing_face:
   
-  
+  <br/>
 ## :alien: Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_
   
 La partie intéressante dans le code est :  
@@ -171,7 +171,7 @@ Il y a donc un autre problème qui ne semble avoir que deux solutions possibles 
 Verdict : 
   - [ ] Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_ :cursing_face:
   
-  
+  <br/>
 ## :alien: Analyser la seconde partie du code contenu dans _B64_01_
   
 La partie intéressante se trouve ici :  
@@ -221,7 +221,7 @@ IEX $DoIt.
 Verdict : 
 - [X]  Analyser la seconde partie du code contenu dans _B64_01_ :sunglasses:
   
-  
+  <br/>
 ## :alien: Choix entre _S01_ et _S02_
   
 Rappel des solutions possibles :  
@@ -239,7 +239,7 @@ Il manque au moins une étape : comprendre ce qui est excéuté en mémoire ou, 
 Verdict : 
 - [X]  Analyser la seconde partie du code contenu dans _B64_01_ :sunglasses:
   
-  
+  <br/>
 ## :alien: Interprétations
   
 Il s'agit assurément d'un SHELLCODE Windows qui est directement injecté en mémoire et exécuté dans la foulée.  
@@ -248,7 +248,7 @@ Il est certain qu'il vise spécifiquement le service à partir duquel il a été
 Verdict : 
 - [X]  Interprétations :sunglasses:
   
-  
+  <br/>
 ## :alien: Conclusion
   
 Il faudrait demander à une RedTeam de tenter de reverser le SHELLCODE.
