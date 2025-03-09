@@ -10,6 +10,8 @@ Liste des taches à accomplir :
 - [ ] Analyser et décoder le fichier distant
 - [ ] Décoder _B64_02_
 - [ ] Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_
+- [ ] Analyser la seconde partie du code contenu dans _B64_01_
+- [ ] Choix entre _S01_ et _S02_
 - [ ] 
 
 
@@ -201,17 +203,18 @@ Les données sont ensuite exécutées :
 GetDelegateForFunctionPointer($var_buffer, …).Invoke([IntPtr]::Zero
 ```
   
-4. Vérification de l’architecture 32/64
+4. Vérification probable de l’architecture
   
 Le code effectue un test :
   
-- Si x64 => lance un sous-processus PowerShell 32 bits
+- Soit il lance un sous-processus PowerShell 32 bits
   
 ```
 Start-Job -RunAs32
 ```
   
-- Sinon exécute directement
+- Soit il exécute directement 
+  
 ```
 IEX $DoIt.
 ```
@@ -220,6 +223,34 @@ Verdict :
 - [X]  Analyser la seconde partie du code contenu dans _B64_01_ :sunglasses:
   
   
-# :alien: Choix entre _S01_ et _S02_
+## :alien: Choix entre _S01_ et _S02_
   
-
+Rappel des solutions possibles :  
+  - _S01_ : il y a, à la suite de _SEQ_01_, encore un décodage  
+  - _S02_ : _SEQ_01_ est suffisante et le reste se passe apres _SEQ_01  
+  
+L'analyse du code indique de façon evidente que _S02_ est privilégiée et donc que :
+1 - D'abord, _B64_02_ est décodée comme une chaine BASE64
+2 - Ensuite, cette chaine décodée est transformée en byte code
+3 - Ensuite, cette sequence byte code est copié dans un buffer exécutable dynamiquement alloué
+4 - Ensuite, le buffer est exécuté
+  
+Il manque au moins une étape : comprendre ce qui est excéuté en mémoire ou, à défaut, comprendre la nature de ce qui est exécuté.
+  
+Verdict : 
+- [X]  Analyser la seconde partie du code contenu dans _B64_01_ :sunglasses:
+  
+  
+## :alien: Interprétations
+  
+Il s'agit assurément d'un SHELLCODE Windows qui est directement injecté en mémoire et exécuté dans la foulée.  
+Il est certain qu'il vise spécifiquement le service à partir duquel il a été exécuté.
+  
+Verdict : 
+- [X]  Interprétations :sunglasses:
+  
+  
+## :alien: Conclusion
+  
+Il faudrait demander à une RedTeam de tenter de reverser le SHELLCODE.
+Cela est faisable, notamment à partir des byte code, mais cela demande un travail conséquent.
