@@ -139,7 +139,8 @@ else {
 	IEX $DoIt
 }
 ```
-  
+<br/>
+
 On remarque immediatement la présence d'une nouvelle chaine très longue en BASE64 : _B64_02_
   
 Verdict : 
@@ -152,9 +153,10 @@ Verdict :
 Un décodage direct de _B64_02_ échoue alors que la chaine finit bien par "==" :  
   
 ![image](https://github.com/user-attachments/assets/11098240-b38e-43cd-86cc-75992ce9d5d4)  
-  
-Il faut analyser le code pour comprendre pourquoi le décodage BASE64 échoue.  
-  
+<br/>
+
+Il faut analyser le code pour comprendre pourquoi le décodage BASE64 échoue.
+<br/>
 
 Verdict : 
   
@@ -166,17 +168,20 @@ Verdict :
   
 La partie intéressante dans le code est :  
   
-![image](https://github.com/user-attachments/assets/8f1fdd89-b469-4e2d-9bea-2563a2339db1)  
-  
+![image](https://github.com/user-attachments/assets/8f1fdd89-b469-4e2d-9bea-2563a2339db1)
+<br/>
+
 On voit clairement la séquence suivante (_SEQ_01_) :  
 - _B64_02_ est décodée comme une chaine BASE64
 - cette chaine décodée est convertie en byte code
 - chaque octet du byte code, on applique XOR avec une clé spécifique ("-bxor 35")
-  
+<br/>
+
 Si on essaie de réaliser ces opérations dans cet ordre, on se rend vite compte que cela donne quelque chose, certes, mais rien d'utilisable ou meme rien de lisible.
   
 ![image](https://github.com/user-attachments/assets/2b3eb94a-0e73-432b-a128-505c653908c3)
-  
+<br/>
+
 Il y a donc un autre problème qui ne semble avoir que deux solutions possibles : 
 1. soit il y a, à la suite de _SEQ_01_, encore un décodage (_S01_)
 2. soit _SEQ_01_ est suffisante et le reste se passe apres _SEQ_01 (_S02)
