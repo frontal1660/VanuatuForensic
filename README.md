@@ -90,8 +90,8 @@ Verdict :
 Le code du fichier distant indique clairement que _B64_01_ :  
 1. est d'abord décodée comme une chaine BASE64
 2. ensuite décompressée comme un binaire GZIP
+<br/>
 
-  <br/>
 CyberChef peut nous aider en chainant "From Base64" et "Gunzip".  
 <br/>
 
