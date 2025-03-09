@@ -62,8 +62,10 @@ Verdict :
 ## :alien: Télécharger le fichier distant
   
 Lorsque l'on télécharge le fichier distant, on obtient un contenu de la sorte :  
+```
 $s=New-Object IO.MemoryStream(,[Convert]::FromBase64String("_B64_01_"));
 IEX (New-Object IO.StreamReader(New-Object IO.Compression.GzipStream($s,[IO.Compression.CompressionMode]::Decompress))).ReadToEnd();
+```
   
 _B64_01_ contient une chaine très longue qui ne ressemble pas à du BASE64 : 
   
