@@ -150,8 +150,8 @@ Si on essaie de réaliser ces opérations dans cet ordre, on se rend vite compte
 ![image](https://github.com/user-attachments/assets/2b3eb94a-0e73-432b-a128-505c653908c3)
   
 Il y a donc un autre problème qui ne semble avoir que deux solutions possibles : 
-1 - soit il y a, à la suite de _SEQ_01_, encore un décodage (_S01_)
-2 - soit _SEQ_01_ est suffisante et le reste se passe apres _SEQ_01 (_S02)
+1. soit il y a, à la suite de _SEQ_01_, encore un décodage (_S01_)
+2. soit _SEQ_01_ est suffisante et le reste se passe apres _SEQ_01 (_S02)
   
 - [ ] Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_
   
@@ -163,14 +163,14 @@ La partie intéressante se trouve ici :
 ![image](https://github.com/user-attachments/assets/389611e1-ba56-4289-9ef0-eb8255b62935)
   
 Il faut analyser sequentiellemnent ce code pour trancher entre _S01_ et _S02_ : 
-1 - Allocation de mémoire avec VirtualAlloc
+1. Allocation de mémoire avec VirtualAlloc
    - Appel API VirtualAlloc via kernel32.dll
    - Allocation d'un buffer mémoire exécutable via 0x40 (PAGE_EXECUTE_READWRITE)
-2 - Copie des données décodées dans ce buffer
+2. Copie des données décodées dans ce buffer
     - Marshal.Copy($var_code, 0, $var_buffer, $var_code.length)
-3 - Exécution des données du buffer en tant que byte code
+3. Exécution des données du buffer en tant que byte code
     - GetDelegateForFunctionPointer($var_buffer, …).Invoke([IntPtr]::Zero
-4 - Vérification de l’architecture 32/64
+4. Vérification de l’architecture 32/64
    - Si x64 => lance un sous-processus PowerShell 32 bits via Start-Job -RunAs32
    - Sinon exécute directement IEX $DoIt.
 
