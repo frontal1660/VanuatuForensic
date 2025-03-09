@@ -53,6 +53,7 @@ TBD
 
 ## OSINT - Récupérer les informations de géoloc du serveur distant
 A partir de Maxmind, il est possible de récupérer les informations suivantes :
+  
 ![image](https://github.com/user-attachments/assets/a87750f6-c1e1-47b6-a002-a8f11c168f71)
 
 ## OSINT - Récupérer les informations de réputation du serveur distant
