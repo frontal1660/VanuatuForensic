@@ -88,8 +88,8 @@ Verdict :
 ## :alien: Analyser et décoder le fichier distant
 
 Le code du fichier distant indique clairement que _B64_01_ :  
-- d'acord décodée comme une chaine BASE64
-- ensuite décompressée comme un binaire GZIP
+1. est d'abord décodée comme une chaine BASE64
+2. ensuite décompressée comme un binaire GZIP
 
   <br/>
 CyberChef peut nous aider en chainant "From Base64" et "Gunzip". On obtient alors le code powershell suivant :  
@@ -172,9 +172,9 @@ La partie intéressante dans le code est :
 <br/>
 
 On voit clairement la séquence suivante (_SEQ_01_) :  
-- _B64_02_ est décodée comme une chaine BASE64
-- cette chaine décodée est convertie en byte code
-- chaque octet du byte code, on applique XOR avec une clé spécifique ("-bxor 35")
+1. _B64_02_ est décodée comme une chaine BASE64
+2. cette chaine décodée est convertie en byte code
+3. chaque octet du byte code, on applique XOR avec une clé spécifique ("-bxor 35")
 <br/>
 
 Si on essaie de réaliser ces opérations dans cet ordre, on se rend vite compte que cela donne quelque chose, certes, mais rien d'utilisable ou meme rien de lisible.
@@ -185,7 +185,8 @@ Si on essaie de réaliser ces opérations dans cet ordre, on se rend vite compte
 Il y a donc un autre problème qui ne semble avoir que deux solutions possibles : 
 1. soit il y a, à la suite de _SEQ_01_, encore un décodage (_S01_)
 2. soit _SEQ_01_ est suffisante et le reste se passe apres _SEQ_01 (_S02)
-  
+<br/>
+
 Verdict : 
   - [ ] Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_ :cursing_face:
   
@@ -196,15 +197,18 @@ Verdict :
 La partie intéressante se trouve ici :  
   
 ![image](https://github.com/user-attachments/assets/389611e1-ba56-4289-9ef0-eb8255b62935)
-  
-Il faut analyser sequentiellemnent ce code pour trancher entre _S01_ et _S02_.
+<br/>
+
+Il faut analyser sequentiellemnent ce code pour trancher entre _S01_ et _S02_.  
 Voici ce qui se passe : 
-  
+<br/>
+
 1. Allocation de mémoire avec VirtualAlloc
   
-Le code fait un appel API VirtualAlloc via kernel32.dll.
+Le code fait un appel API VirtualAlloc via kernel32.dll.  
 Il alloue un buffer mémoire exécutable via 0x40 (PAGE_EXECUTE_READWRITE)
-  
+<br/>
+
 2. Copie des données décodées dans ce buffer
   
 Les données décodées sont copiées dans le buffe mémoire exécutable via la commande : 
@@ -212,7 +216,8 @@ Les données décodées sont copiées dans le buffe mémoire exécutable via la 
 ```
 Marshal.Copy($var_code, 0, $var_buffer, $var_code.length)
 ```
-  
+<br/>
+
 3. Exécution des données du buffer en tant que byte code
   
 Les données sont ensuite exécutées :  
@@ -220,7 +225,8 @@ Les données sont ensuite exécutées :
 ```
 GetDelegateForFunctionPointer($var_buffer, …).Invoke([IntPtr]::Zero
 ```
-  
+<br/>
+
 4. Vérification probable de l’architecture
   
 Le code effectue un test :
@@ -247,15 +253,18 @@ Verdict :
 Rappel des solutions possibles :  
   - _S01_ : il y a, à la suite de _SEQ_01_, encore un décodage  
   - _S02_ : _SEQ_01_ est suffisante et le reste se passe apres _SEQ_01  
-  
-L'analyse du code indique de façon evidente que _S02_ est privilégiée et donc que :
-1 - D'abord, _B64_02_ est décodée comme une chaine BASE64
-2 - Ensuite, cette chaine décodée est transformée en byte code
-3 - Ensuite, cette sequence byte code est copié dans un buffer exécutable dynamiquement alloué
-4 - Ensuite, le buffer est exécuté
-  
+<br/>
+
+L'analyse du code indique de façon evidente que _S02_ est privilégiée et donc que :  
+1. D'abord, _B64_02_ est décodée comme une chaine BASE64
+2. Ensuite, cette chaine décodée est transformée en byte code
+3. Ensuite, cette sequence byte code est copié dans un buffer exécutable dynamiquement alloué
+4. Ensuite, le buffer est exécuté  
+<br/>
+
 Il manque au moins une étape : comprendre ce qui est excéuté en mémoire ou, à défaut, comprendre la nature de ce qui est exécuté.
-  
+<br/>
+
 Verdict : 
 - [X]  Analyser la seconde partie du code contenu dans _B64_01_ :sunglasses:
   
@@ -265,7 +274,8 @@ Verdict :
   
 Il s'agit assurément d'un SHELLCODE Windows qui est directement injecté en mémoire et exécuté dans la foulée.  
 Il est certain qu'il vise spécifiquement le service à partir duquel il a été exécuté.
-  
+<br/>
+
 Verdict : 
 - [X]  Interprétations :sunglasses:
   
