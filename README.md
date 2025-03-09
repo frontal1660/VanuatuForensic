@@ -67,7 +67,6 @@ Verdict :
 ## :alien: Télécharger le fichier distant
   
 Lorsque l'on télécharge le fichier distant, on obtient un contenu de la sorte :  
-<br/>
 
 ```
 $s=New-Object IO.MemoryStream(,[Convert]::FromBase64String("_B64_01_"));
