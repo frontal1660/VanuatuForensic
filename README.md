@@ -14,11 +14,13 @@ Liste des taches à accomplir :
 - [ ] Choix entre _S01_ et _S02_
   
   <br/>
+
 ##  :alien: Définir le contexte
   
 Contexte : blocage, par Crowdstrike, d'une commande powershell.
   
   <br/>
+
 ## Récupérer la commande powershell parente
 
 La commande fournie par CrowdStrike est la suivante : 
@@ -37,6 +39,7 @@ Verdict :
 - [X] Récupérer la commande powershell parente :sunglasses:
   
   <br/>
+
 ## :alien: OSINT - Récupérer les informations de géoloc du serveur distant
   
 A partir de Maxmind, il est possible de récupérer les informations suivantes :
@@ -48,6 +51,7 @@ Verdict :
 - [X] OSINT - Récupérer les informations de géoloc du serveur distant :sunglasses:
   
   <br/>
+
 ## :alien: OSINT - Récupérer les informations de réputation du serveur distant
 
 Le site Cisco Talos indique que l'IP possède une réputation plutôt "neutre" : 
@@ -59,6 +63,7 @@ Verdict :
 - [X] OSINT - Récupérer les informations de réputation du serveur distant :sunglasses:
   
   <br/>
+
 ## :alien: Télécharger le fichier distant
   
 Lorsque l'on télécharge le fichier distant, on obtient un contenu de la sorte :  
@@ -75,12 +80,14 @@ Verdict :
   - [X] Télécharger le script distant :sunglasses:
   
   <br/>
+
 ## :alien: Analyser et décoder le fichier distant
 
 Le code du fichier distant indique clairement que _B64_01_ :  
 - d'acord décodée comme une chaine BASE64
 - ensuite décompressée comme un binaire GZIP
-  
+
+  <br/>
 CyberChef peut nous aider en chainant "From Base64" et "Gunzip". On obtient alors le code powershell suivant :  
   
 ```
@@ -222,6 +229,7 @@ Verdict :
 - [X]  Analyser la seconde partie du code contenu dans _B64_01_ :sunglasses:
   
   <br/>
+
 ## :alien: Choix entre _S01_ et _S02_
   
 Rappel des solutions possibles :  
@@ -240,6 +248,7 @@ Verdict :
 - [X]  Analyser la seconde partie du code contenu dans _B64_01_ :sunglasses:
   
   <br/>
+
 ## :alien: Interprétations
   
 Il s'agit assurément d'un SHELLCODE Windows qui est directement injecté en mémoire et exécuté dans la foulée.  
@@ -249,6 +258,7 @@ Verdict :
 - [X]  Interprétations :sunglasses:
   
   <br/>
+
 ## :alien: Conclusion
   
 Il faudrait demander à une RedTeam de tenter de reverser le SHELLCODE.
