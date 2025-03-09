@@ -12,9 +12,9 @@ Liste des taches à accomplir :
 - [ ] Décoder _B64_02_
 - [ ] Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_
 - [ ] Analyser la seconde partie du code contenu dans _B64_01_
-- [ ] Choix entre _S01_ et _S02_
-- [ ] Interprétations
-- [ ] Conclusion
+- [ ] Choisir entre _S01_ et _S02_
+- [ ] Interpréter
+- [ ] Conclure
   
   <br/>
 
@@ -256,7 +256,7 @@ Verdict :
   
   <br/>
 
-## :alien: Choix entre _S01_ et _S02_
+## :alien: Choisir entre _S01_ et _S02_
   
 Rappel des solutions possibles :  
   - _S01_ : il y a, à la suite de _SEQ_01_, encore un décodage  
@@ -278,7 +278,7 @@ Verdict :
   
   <br/>
 
-## :alien: Interprétations
+## :alien: Interpréter
   
 Il s'agit assurément d'un SHELLCODE Windows qui est directement injecté en mémoire et exécuté dans la foulée.  
 Il est certain qu'il vise spécifiquement le service à partir duquel il a été exécuté.  
@@ -289,7 +289,7 @@ Verdict :
   
   <br/>
 
-## :alien: Conclusion
+## :alien: Conclure
   
 Il faudrait demander à une RedTeam de tenter de reverser le SHELLCODE.  
 Cela est faisable, notamment à partir des byte code, mais cela demande un travail conséquent.
