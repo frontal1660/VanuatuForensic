@@ -315,10 +315,8 @@ Voici quelques CVE interessantes :
 
 ## :alien: Bonns 02 - Extrapolation
   
-La CVE-2024-4040 est le vecteur le plus probable car zlle permet d’échapper à la sandbox VFS et d’exécuter du code arbitraire.
-<br/>
+La CVE-2024-4040 est le vecteur le plus probable car zlle permet d’échapper à la sandbox VFS et d’exécuter du code arbitraire.  
 
 ==> Cela correspond parfaitement à l’exécution d’un script PowerShell injecté.  
-<br/>
 
 Les autres CVE (XSS, prise de contrôle admin) ne mènent pas directement à un shell PowerShell injecté mais pourraient être utilisées en complément pour faciliter une attaque.
