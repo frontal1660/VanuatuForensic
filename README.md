@@ -12,6 +12,8 @@ Liste des taches à accomplir :
 - [ ] Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_
 - [ ] Analyser la seconde partie du code contenu dans _B64_01_
 - [ ] Choix entre _S01_ et _S02_
+- [ ] Interprétations
+- [ ] Conclusion
   
   <br/>
 
@@ -257,7 +259,7 @@ Verdict :
   
 Rappel des solutions possibles :  
   - _S01_ : il y a, à la suite de _SEQ_01_, encore un décodage  
-  - _S02_ : _SEQ_01_ est suffisante et le reste se passe apres _SEQ_01  
+  - _S02_ : _SEQ_01_ est suffisante et le reste se passe apres _SEQ_01_  
 <br/>
 
 L'analyse du code indique de façon evidente que _S02_ est privilégiée et donc que :  
@@ -267,7 +269,7 @@ L'analyse du code indique de façon evidente que _S02_ est privilégiée et donc
 4. Ensuite, le buffer est exécuté  
 <br/>
 
-Il manque au moins une étape : comprendre ce qui est excéuté en mémoire ou, à défaut, comprendre la nature de ce qui est exécuté.
+Il manque au moins une étape : comprendre ce qui est excéuté en mémoire ou, à défaut, comprendre la nature de ce qui est exécuté.  
 <br/>
 
 Verdict : 
@@ -278,7 +280,7 @@ Verdict :
 ## :alien: Interprétations
   
 Il s'agit assurément d'un SHELLCODE Windows qui est directement injecté en mémoire et exécuté dans la foulée.  
-Il est certain qu'il vise spécifiquement le service à partir duquel il a été exécuté.
+Il est certain qu'il vise spécifiquement le service à partir duquel il a été exécuté.  
 <br/>
 
 Verdict : 
