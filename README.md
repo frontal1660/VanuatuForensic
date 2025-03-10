@@ -319,7 +319,7 @@ Voici quelques CVE interessantes :
 
 ## :alien: Bonns 02 - Extrapolation
   
-La :skull:CVE-2024-4040:skull: est le vecteur le plus probable car zlle permet d’échapper à la sandbox VFS et d’exécuter du code arbitraire.  
+La :skull:CVE-2024-4040:skull: est le vecteur le plus probable car elle permet d’échapper à la sandbox VFS et d’exécuter du code arbitraire.  
 
 ==> Cela correspond parfaitement à l’exécution d’un script PowerShell injecté.  
 
