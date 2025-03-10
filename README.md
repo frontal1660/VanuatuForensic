@@ -151,7 +151,8 @@ else {
 <br/>
 
 On remarque immediatement la présence d'une nouvelle chaine très longue en BASE64 : _B64_02_  
-  
+<br/>
+
 Verdict : 
   - [X] Analyser et décoder le fichier distant :sunglasses:
   
