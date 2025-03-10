@@ -14,7 +14,7 @@ Liste des taches à accomplir :
 - [ ] Analyser la seconde partie du code contenu dans _B64_01_
 - [ ] Choisir entre _S01_ et _S02_
 - [ ] Interpréter
-- [ ] Conclure
+- [ ] <a name="link-conclure">Conclure</a>
 - [ ] Bonus 01 - CVE
 - [ ] Bonns 02 - Extrapolation
   
@@ -291,7 +291,7 @@ Verdict :
   
   <br/>
 
-## :alien: Conclure
+## :alien: [Conclure](#link-conclure)
   
 Il faudrait demander à une RedTeam de tenter de reverser le SHELLCODE.  
 Cela est faisable, notamment à partir des byte code, mais cela demande un travail conséquent.  
