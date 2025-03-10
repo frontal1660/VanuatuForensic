@@ -19,7 +19,7 @@ Liste des taches à accomplir :
 - [ ] [Interpréter](#link-interpreter)
 - [ ] [Conclure](#link-conclure)
 - [ ] [Bonus 01 - CVE](#link-cve)
-- [ ] [Bonns 02 - Extrapolation](#link-extrapolation)
+- [ ] [Bonus 02 - Extrapolation](#link-extrapolation)
   
   <br/>
 
@@ -321,7 +321,7 @@ Voici quelques CVE interessantes :
 
   <br/>
 
-## :alien: <a name="ink-extrapolation">Bonns 02 - Extrapolation</a>
+## :alien: <a name="ink-extrapolation">Bonus 02 - Extrapolation</a>
   
 La :skull:CVE-2024-4040:skull: est le vecteur le plus probable car elle permet d’échapper à la sandbox VFS et d’exécuter du code arbitraire.  
 
