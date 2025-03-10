@@ -268,7 +268,7 @@ Rappel des solutions possibles :
 L'analyse du code indique de façon evidente que _S02_ est privilégiée et donc que :  
 1. D'abord, _B64_02_ est décodée comme une chaine BASE64
 2. Ensuite, cette chaine décodée est transformée en byte code
-3. Ensuite, cette sequence byte code est copié dans un buffer exécutable dynamiquement alloué
+3. Ensuite, cette sequence byte code est copiée dans un buffer exécutable dynamiquement alloué
 4. Ensuite, le buffer est exécuté  
 <br/>
 
