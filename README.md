@@ -3,30 +3,30 @@
 
 ## :alien: Plan d'actions
 Liste des taches à accomplir :
-- [ ] Définir le contexte
-- [ ] Récupérer la commande powershell parente
-- [ ] OSINT - Récupérer les informations de géoloc du serveur distant
-- [ ] OSINT - Récupérer les informations de réputation du serveur distant
-- [ ] Télécharger le fichier distant
-- [ ] Analyser et décoder le fichier distant
-- [ ] Décoder _B64_02_
-- [ ] Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_
-- [ ] Analyser la seconde partie du code contenu dans _B64_01_
-- [ ] Choisir entre _S01_ et _S02_
-- [ ] Interpréter
+- [ ] [Définir le contexte](#link-contexte)
+- [ ] [Récupérer la commande powershell parente](#link-command)
+- [ ] [OSINT - Récupérer les informations de géoloc du serveur distant](#link-geoip)
+- [ ] [OSINT - Récupérer les informations de réputation du serveur distant](#link-repute)
+- [ ] [Télécharger le fichier distant](#link-dl)
+- [ ] [Analyser et décoder le fichier distant](#link-analyse01)
+- [ ] [Décoder _B64_02_](#link-decoder)
+- [ ] [Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_](#link-analyse02)
+- [ ] [Analyser la seconde partie du code contenu dans _B64_01_](#link-analyse03)
+- [ ] [Choisir entre _S01_ et _S02_](#link-solutions)
+- [ ] [Interpréter](#link-interpreter)
 - [ ] [Conclure](#link-conclure)
-- [ ] Bonus 01 - CVE
-- [ ] Bonns 02 - Extrapolation
+- [ ] [Bonus 01 - CVE](#link-cve)
+- [ ] [Bonns 02 - Extrapolation](#link-extrapolation)
   
   <br/>
 
-##  :alien: Définir le contexte
+##  :alien: <a name="link-contexte">Définir le contexte</a>
   
 Contexte : blocage, par Crowdstrike, d'une commande powershell.
   
   <br/>
 
-## Récupérer la commande powershell parente
+## :alien: <a name="link-command">Récupérer la commande powershell parente</a>
 
 La commande fournie par CrowdStrike est la suivante : 
   
@@ -45,7 +45,7 @@ Verdict :
   
   <br/>
 
-## :alien: OSINT - Récupérer les informations de géoloc du serveur distant
+## :alien: <a name="link-geoip">OSINT - Récupérer les informations de géoloc du serveur distant</a>
   
 A partir de Maxmind, il est possible de récupérer les informations suivantes :
   
@@ -57,7 +57,7 @@ Verdict :
   
   <br/>
 
-## :alien: OSINT - Récupérer les informations de réputation du serveur distant
+## :alien: <a name="link-repute">OSINT - Récupérer les informations de réputation du serveur distant</a>
 
 Le site Cisco Talos indique que l'IP possède une réputation plutôt "neutre" : 
   
@@ -69,8 +69,8 @@ Verdict :
   
   <br/>
 
-## :alien: Télécharger le fichier distant
-  
+## :alien: <a name="link-dl">Télécharger le fichier distant</a>
+
 Lorsque l'on télécharge le fichier distant, on obtient un contenu de la sorte :  
 
 ```
@@ -90,8 +90,8 @@ Verdict :
   
   <br/>
 
-## :alien: Analyser et décoder le fichier distant
-
+## :alien: <a name="link-analyse01">Analyser et décoder le fichier distant</a>
+  
 Le code du fichier distant indique clairement que _B64_01_ :  
 1. est d'abord décodée comme une chaine BASE64
 2. ensuite décompressée comme un binaire GZIP
@@ -157,8 +157,8 @@ Verdict :
   
   <br/>
 
-## :alien: Décoder _B64_02_
-
+## :alien: <a name="link-decoder">Décoder _B64_02_</a>
+  
 Un décodage direct de _B64_02_ échoue alors que la chaine finit bien par "==" :  
   
 ![image](https://github.com/user-attachments/assets/11098240-b38e-43cd-86cc-75992ce9d5d4)  
@@ -173,7 +173,7 @@ Verdict :
   
   <br/>
 
-## :alien: Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_
+## :alien: <a name="link-analyse02">Analyser le code contenu dans _B64_01_ servant à décoder _B64_02_</a>
   
 La partie intéressante dans le code est :  
   
@@ -201,8 +201,8 @@ Verdict :
   
   <br/>
 
-## :alien: Analyser la seconde partie du code contenu dans _B64_01_
-  
+## :alien: <a name="link-analyse03">Analyser la seconde partie du code contenu dans _B64_01_</a>
+
 La partie intéressante se trouve ici :  
   
 ![image](https://github.com/user-attachments/assets/389611e1-ba56-4289-9ef0-eb8255b62935)
@@ -258,7 +258,7 @@ Verdict :
   
   <br/>
 
-## :alien: Choisir entre _S01_ et _S02_
+## :alien: <a name="link-solutions">Choisir entre _S01_ et _S02_</a>
   
 Rappel des solutions possibles :  
   - _S01_ : il y a, à la suite de _SEQ_01_, encore un décodage  
@@ -280,7 +280,7 @@ Verdict :
   
   <br/>
 
-## :alien: Interpréter
+## :alien: <a name="link-interpreter">Interpréter</a>
   
 Il s'agit assurément d'un SHELLCODE Windows qui est directement injecté en mémoire et exécuté dans la foulée.  
 Il est certain qu'il vise spécifiquement le service à partir duquel il a été exécuté.  
@@ -302,7 +302,7 @@ Verdict :
   
   <br/>
 
-## :alien: Bonus 01 - CVE
+## :alien: <a name="link-cve">Bonus 01 - CVE</a>
   
 Voici quelques CVE interessantes : 
 <br/>
@@ -317,7 +317,7 @@ Voici quelques CVE interessantes :
 
   <br/>
 
-## :alien: Bonns 02 - Extrapolation
+## :alien: <a name="ink-extrapolation">Bonns 02 - Extrapolation</a>
   
 La :skull:CVE-2024-4040:skull: est le vecteur le plus probable car elle permet d’échapper à la sandbox VFS et d’exécuter du code arbitraire.  
 
