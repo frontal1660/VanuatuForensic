@@ -269,7 +269,7 @@ L'analyse du code indique de façon evidente que _S02_ est privilégiée et donc
 1. D'abord, _B64_02_ est décodée comme une chaine BASE64
 2. Ensuite, cette chaine décodée est transformée en byte code
 3. Ensuite, cette sequence byte code est copiée dans un buffer exécutable dynamiquement alloué
-4. Ensuite, le buffer est exécuté  
+4. Enfin, le buffer est exécuté  
 <br/>
 
 Il manque au moins une étape : comprendre ce qui est excéuté en mémoire ou, à défaut, comprendre la nature de ce qui est exécuté.  
