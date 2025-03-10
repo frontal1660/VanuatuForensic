@@ -287,15 +287,17 @@ Il est certain qu'il vise spécifiquement le service à partir duquel il a été
 <br/>
 
 Verdict : 
-- [X]  Interprétations :sunglasses:
+- [X]  Interpréter :sunglasses:
   
   <br/>
 
 ## :alien: Conclure
   
 Il faudrait demander à une RedTeam de tenter de reverser le SHELLCODE.  
-Cela est faisable, notamment à partir des byte code, mais cela demande un travail conséquent.
+Cela est faisable, notamment à partir des byte code, mais cela demande un travail conséquent.  
 
+Verdict : 
+- [X]  Conclure :sunglasses:
   <br/>
 
 ## :alien: Bonus 01 - CVE
