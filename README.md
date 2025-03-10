@@ -220,7 +220,7 @@ Il alloue un buffer mémoire exécutable via 0x40 (PAGE_EXECUTE_READWRITE)
 
 2. Copie des données décodées dans ce buffer
   
-Les données décodées sont copiées dans le buffe mémoire exécutable via la commande : 
+Les données décodées sont copiées dans le buffer mémoire exécutable via la commande : 
   
 ```
 Marshal.Copy($var_code, 0, $var_buffer, $var_code.length)
